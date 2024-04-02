@@ -1,7 +1,10 @@
 extend schema @link(url: "https://specs.apollo.dev/federation/v2.6", import: ["@key"])
 
+scalar JSON
+scalar JSONObject
+
 type Query {
-  patient: Patient
+  patient(where: JSONObject): Patient
 }
 
 type Patient {
