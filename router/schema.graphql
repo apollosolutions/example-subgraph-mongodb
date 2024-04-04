@@ -56,5 +56,6 @@ type Patient
 type Query
   @join__type(graph: SUBGRAPH)
 {
-  patients(where: JSONObject = {}): [Patient]
+  patients(where: JSONObject): [Patient]
+  patient(patientId: ID!): Patient
 }

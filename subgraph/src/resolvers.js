@@ -16,8 +16,11 @@ const buildMongoFilter = (filter) => {
 const resolvers = {
   Query: {
     patients: async (_, args, context) => {
-      const filter = buildMongoFilter(args.where);
+      const filter = buildMongoFilter(args.where || {});
       return context.mongoRepo.getPatients(filter);
+    },
+    patient: async (_, args, context) => {
+      return context.mongoRepo.getPatient(args.patientId);
     },
   },
   GraphQLJSONObject,

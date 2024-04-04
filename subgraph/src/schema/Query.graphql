@@ -4,7 +4,12 @@ scalar JSON
 scalar JSONObject
 
 type Query {
-  patients(where: JSONObject = {}): [Patient]
+  # This is a data-first approach. This is possible but not our #1 recommendation due to the security implications of
+  # exposing an arbitrary filtering param that goes straight into the database without any validation
+  patients(where: JSONObject): [Patient]
+
+  # This is a demand-driven approach. This is what we recommend to focus on delivering value to consumers and solving for their use cases directly.
+  patient(patientId: ID!): Patient
 }
 
 type Patient {
