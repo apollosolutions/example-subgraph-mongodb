@@ -4,6 +4,7 @@ This repository demonstrates how to connect to MongoDB Atlas from a subgraph and
 
 ## Running the Example
 
+1. Make a copy of `subgraph/.env.sample` to `subgraph/.env` and update the `MONGO_CONNECTION_STRING` with your connection string.
 1. Run the subgraph from the `/subgraph` directory with `npm run dev`
 1. In the `/router` directory, download the router by running `./download_router.sh`
 1. In the `/router` directory, compose the schema by running `./create_local_schema.sh`
