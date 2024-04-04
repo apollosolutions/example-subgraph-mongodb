@@ -4,7 +4,7 @@ scalar JSON
 scalar JSONObject
 
 type Query {
-  patient(where: JSONObject): Patient
+  patients(where: JSONObject = {}): [Patient]
 }
 
 type Patient {

@@ -27,11 +27,13 @@ class MongoRepo {
     }
   }
 
-  async getPatient(filter) {
+  async getPatients(filter) {
     try {
       await this._client.connect();
 
-      return await this._client.db("healthcare").collection("patients").findOne(filter);
+      const reuslts = await this._client.db("healthcare").collection("patients").find(filter).toArray();
+
+      return reuslts;
     } catch (err) {
       console.log("MongoRepo.getPatient: Failed to read data. Reason: " + err);
     } finally {
