@@ -1,0 +1,8 @@
+name: example-subgraph-mongodb
+description: A demonstration of connecting MongoDB Atlas from a subgraph and
+  making the data available via the router. The repo demonstrates how you can
+  expose and pass down a MongoDB-like filter for filtering returned data, as
+  well as, a more demand-driven approach of using specific GraphQL arguments.
+tags:
+  - Subgraph
+  - Mongo
